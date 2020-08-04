@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:clima/utilities/constants.dart';
+import '../services/location.dart';
+import '../services/weather.dart';
+import '../utilities/constants.dart';
+import '../services/location.dart';
+import '../services/weather.dart';
+import '../screens/location_screen.dart';
 
 class CityScreen extends StatefulWidget {
   @override
@@ -7,6 +12,8 @@ class CityScreen extends StatefulWidget {
 }
 
 class _CityScreenState extends State<CityScreen> {
+  String city;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,17 +41,20 @@ class _CityScreenState extends State<CityScreen> {
               Container(
                 padding: EdgeInsets.all(20.0),
                 child: TextField(
-                  style: TextStyle(
-                    color:Colors.black
-                  ),
+                  style: TextStyle(color: Colors.black),
                   decoration: kTextFieldInputDecoration,
-                  onChanged: (value){
-                    print(value);
+                  onChanged: (value) {
+                    city = value;
                   },
                 ),
               ),
               FlatButton(
-                onPressed: () {},
+                onPressed: () async {
+                  var weatherData = await WeatherModel().getCityWeather(city);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return LocationScreen(weatherData);
+                  }));
+                },
                 child: Text(
                   'Get Weather',
                   style: kButtonTextStyle,

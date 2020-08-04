@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "983833009214",
-    "firebase_url": "https://flash-chat-26753.firebaseio.com",
-    "project_id": "flash-chat-26753",
-    "storage_bucket": "flash-chat-26753.appspot.com"
+    "project_number": "144339111426",
+    "firebase_url": "https://flashchat-8568a.firebaseio.com",
+    "project_id": "flashchat-8568a",
+    "storage_bucket": "flashchat-8568a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:983833009214:android:6a489f72d075f180",
+        "mobilesdk_app_id": "1:144339111426:android:b017e9b6fa6fa05618211b",
         "android_client_info": {
-          "package_name": "co.lino.flash_chat"
+          "package_name": "co.chingparungao"
         }
       },
       "oauth_client": [
         {
-          "client_id": "983833009214-75igli2l0j6n3h4r97fug4cq4crm5nt4.apps.googleusercontent.com",
+          "client_id": "144339111426-pua998e51tjbpistrjo5g8eggjl7dan3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDwD6PdGBHCjE4vkmjFS9cUP58UNqPItag"
+          "current_key": "AIzaSyChQ5GEkVawka-H6thk7xjc6SMP9z0jCcw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "983833009214-75igli2l0j6n3h4r97fug4cq4crm5nt4.apps.googleusercontent.com",
+              "client_id": "144339111426-pua998e51tjbpistrjo5g8eggjl7dan3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

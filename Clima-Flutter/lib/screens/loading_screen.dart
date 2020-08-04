@@ -1,4 +1,4 @@
-import 'package:clima/services/location.dart';
+import '../services/location.dart';
 import 'package:flutter/material.dart';
 
 class LoadingScreen extends StatefulWidget {

@@ -1,17 +1,28 @@
-import 'package:clima/services/location.dart';
-import 'package:clima/services/networking.dart';
+import '../services/location.dart';
+import '../services/networking.dart';
+import 'dart:convert';
 
 class WeatherModel {
+  final apiKey = 'a7d39c34549f2a5dcc4a03dbdd6c51ba';
+  final openWeatherMapURl = 'https://api.openweathermap.org/data/2.5/weather';
 
-  final apiKey = '123456';
- final openWeatherMapURl = 'https://api';
   Future<dynamic> getLocationWeather() async {
     Location location = Location();
     await location.getCurrentLocation();
 
-
     NetworkHelper networkHelper = NetworkHelper(
-      '$openWeatherMapURl?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=metric');
+        '$openWeatherMapURl?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=metric');
+
+    var weatherData = await networkHelper.getDataFromURL();
+    return weatherData;
+  }
+
+  Future<dynamic> getCityWeather(String city) async {
+    NetworkHelper networkHelper =
+        NetworkHelper('$openWeatherMapURl?q=$city&appid=$apiKey&units=metric');
+
+    var weatherData = await networkHelper.getDataFromURL();
+    return weatherData;
   }
 
   String getWeatherIcon(int condition) {
